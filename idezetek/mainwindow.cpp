@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 }
 
 void MainWindow::betoltes() {
-    // Ez a sor garantálja, hogy a program a saját mappájában keresse a fájlt
+
     QString filename = "idezetek.txt";
     QString path = QCoreApplication::applicationDirPath() + "/" + filename;
 
@@ -53,7 +53,7 @@ void MainWindow::betoltes() {
     }
 
     if (osszesIdezet.isEmpty()) {
-        // Ha nem találja, megmutatjuk a felhasználónak, hol kereste a program
+
         quoteLabel->setText("HIBA: Nem találom a fájlt!\n\nIde másold be: \n" + path);
     }
 }
@@ -61,7 +61,7 @@ void MainWindow::betoltes() {
 void MainWindow::ujszerencse() {
     if (osszesIdezet.isEmpty()) return;
 
-    // Ha csak 1 idézet van
+
     if (osszesIdezet.size() == 1) {
         quoteLabel->setText("“" + osszesIdezet[0] + "”");
         return;
